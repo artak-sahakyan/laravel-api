@@ -26,20 +26,11 @@ class CreatePropertiesTable extends Migration
             $table->unsignedInteger('project_id');
             $table->unsignedInteger('region_id');
 
-
-            $table->foreign('property_type_id')
-                ->references('id')
-                ->on('property_types');
-            $table->foreign('status_id')
-                ->references('id')
-                ->on('statuses');
-            $table->foreign('region_id')
-                ->references('id')
-                ->on('regions');
-            $table->foreign('project_id')
-                ->references('id')
-                ->on('projects')
-                ->onDelete('cascade');
+            $table->foreign('property_type_id')->references('id')->on('property_types');
+            $table->foreign('status_id')->references('id')->on('statuses');
+            $table->foreign('region_id')->references('id')->on('regions');
+            $table->foreign('project_id')->references('id')->on('projects')->onDelete('cascade');
+            $table->timestamps();
         });
     }
 

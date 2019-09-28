@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\PropertyType;
 
 class PropertiesTableSeeder extends Seeder
 {
@@ -11,6 +12,7 @@ class PropertiesTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+
+        factory('App\Property', 15000)->create();
     }
 }
