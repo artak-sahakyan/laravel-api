@@ -21,7 +21,7 @@ class RegionsTableSeeder extends Seeder
                 'Region 1', 'Region 2'
             ],
             static::CAMBODIA_ID => [
-                'Region 7', 'Region 3'
+                'Region 7', 'Region 4'
             ],
         ];
         
