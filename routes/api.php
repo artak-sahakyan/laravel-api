@@ -1,5 +1,6 @@
 <?php
-
+header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept');
 use Illuminate\Http\Request;
 
 /*
@@ -17,4 +18,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/properties', 'PropertyController@index');
+Route::post('/properties', 'PropertyController@index');
+Route::get('/filter-options', 'PropertyController@getFilterOptions');

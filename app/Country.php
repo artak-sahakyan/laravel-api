@@ -6,5 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Country extends Model
 {
-    //
+   public static function getCountryIds()
+   {
+       return self::get()->pluck('id', 'name')->toArray();
+   }
 }
