@@ -13,21 +13,13 @@ $factory->define(Property::class, function (Faker $faker) {
     return [
         'title' => $faker->sentence(rand(2, 5)),
         'description' => $faker->sentence(rand(10, 20)),
-        'bedroom' => rand(1, 7),
+        'status_id' => PropertiesTableSeeder::getRandomStatusId(),
+        'bedroom' => PropertiesTableSeeder::getRandomBedroom(),
         'bathroom' => rand(1, 3),
-        'property_type_id' => function () {
-            return PropertyType::inRandomOrder()->first()->id;
-        },
-        'status_id' => function () {
-            return Status::inRandomOrder()->first()->id;
-        },
-        'for_sale' => rand(0, 1),
-        'for_rent' => rand(0, 1),
-        'project_id' => function () {
-            return Project::inRandomOrder()->first()->id;
-        },
-        'region_id' => function () {
-            return Region::inRandomOrder()->first()->id;
-        },
+        'property_type_id' => PropertiesTableSeeder::getRandomPropertyTypeId(),
+        'project_id' => PropertiesTableSeeder::getRandomProjectId(),
+        'region_id' => PropertiesTableSeeder::getRandomRegionId(),
+        'for_rent' => PropertiesTableSeeder::getRandomForRent(),
+        'for_sale' => PropertiesTableSeeder::getRandomForSale(),
     ];
 });
