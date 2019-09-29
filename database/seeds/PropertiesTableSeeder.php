@@ -213,6 +213,9 @@ class PropertiesTableSeeder extends Seeder
     public function run()
     {
         static::$isSeedRunning = true;
-        factory('App\Property', 15000)->create();
+        for($i = 0; $i< 10; $i++) {
+            factory('App\Property', 10000)->create();    
+        }
+        
     }
 }
