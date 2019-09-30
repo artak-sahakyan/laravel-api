@@ -21,4 +21,5 @@
 </IfModule>
 <IfModule mod_headers.c>
     Header set Access-Control-Allow-Origin "*"
+    HEADER set Access-Control-Allow-Headers "Origin, X-Requested-With, Content-Type, Accept"
 </IfModule>

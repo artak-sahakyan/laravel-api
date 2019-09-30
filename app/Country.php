@@ -10,4 +10,9 @@ class Country extends Model
    {
        return self::get()->pluck('id', 'name')->toArray();
    }
+
+    public function regions()
+    {
+        return $this->hasMany('App\Region');
+    }
 }
