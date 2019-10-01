@@ -61,6 +61,7 @@ class PropertiesTableSeeder extends Seeder
                 $projectKey = array_rand($projectIds);
                 static::$firstProjectId =  $projectIds[$projectKey];
                 unset($projectIds[$projectKey]);
+                unset(static::$projectIds[$projectKey]);
                 static::$usedProjectIds[static::$firstProjectId] = 1;
             } else {
                 static::$usedProjectIds[static::$firstProjectId]++;
